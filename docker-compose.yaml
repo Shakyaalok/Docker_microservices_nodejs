@@ -1,0 +1,12 @@
+# redis setup
+version: '3.9'
+services:
+    redis:
+      container_name: redis_container
+      image: redis:appine
+      restart: always
+      ports:
+      - '6379:6379'
+      command: redis-server --loglevel warning
+      volumes:
+       - ./docker-volumes/cache:/data
